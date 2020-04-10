@@ -60,7 +60,7 @@ message("--------------------")
 message(SDL_INCLUDE_DIR=${SDL_INCLUDE_DIR})
 message(SDL_LIBRARY=${SDL_LIBRARY})
 
-add_executable(CPlayer src/main.cpp)
+add_executable(CPlayer src/main.cpp src/grabber.cpp src/video_player.cpp src/audio_player.cpp)
 
 target_include_directories(CPlayer PRIVATE
         ${PROJECT_SOURCE_DIR}/include
@@ -69,6 +69,7 @@ target_include_directories(CPlayer PRIVATE
         ${AVUTIL_INCLUDE_DIR}
         ${AVDEVICE_INCLUDE_DIR}
         ${SWSCALE_INCLUDE_DIR}
+        ${SWRESAMPLE_INCLUDE_DIR}
         ${SDL_INCLUDE_DIR})
 target_link_libraries(CPlayer PRIVATE
         ${AVCODEC_LIBRARY}
@@ -76,4 +77,5 @@ target_link_libraries(CPlayer PRIVATE
         ${AVUTIL_LIBRARY}
         ${AVDEVICE_LIBRARY}
         ${SWSCALE_LIBRARY}
+        ${SWRESAMPLE_LIBRARY}
         ${SDL_LIBRARY})
