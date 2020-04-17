@@ -60,7 +60,7 @@ message("--------------------")
 message(SDL_INCLUDE_DIR=${SDL_INCLUDE_DIR})
 message(SDL_LIBRARY=${SDL_LIBRARY})
 
-add_executable(CPlayer src/main.cpp src/grabber.cpp src/video_player.cpp src/audio_player.cpp)
+add_executable(CPlayer src/main.cpp src/grabber.cpp src/video_player.cpp src/audio_player.cpp include/VideoProcessor.h include/AudioProcessor.h src/v_processor.cpp src/a_processor.cpp)
 
 target_include_directories(CPlayer PRIVATE
         ${PROJECT_SOURCE_DIR}/include
